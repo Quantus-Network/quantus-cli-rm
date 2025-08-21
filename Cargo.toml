@@ -1,11 +1,11 @@
 [package]
-name = "quantus-cli"
+name = "quantus-cli-rm"
 version = "0.1.0"
 edition = "2021"
 authors = ["Quantus Network"]
 license = "Apache-2.0"
 description = "Command line interface for interacting with the Quantus Network"
-repository = "https://github.com/Quantus-Network/quantus-cli"
+repository = "https://github.com/Quantus-Network/quantus-cli-rm"
 
 [[bin]]
 name = "quantus"

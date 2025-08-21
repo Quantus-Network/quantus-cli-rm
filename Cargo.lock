@@ -3235,7 +3235,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "quantus-cli"
+name = "quantus-cli-rm"
 version = "0.1.0"
 dependencies = [
  "aes-gcm",

@@ -57,13 +57,13 @@ jobs:
         include:
           - target: x86_64-unknown-linux-gnu
             os: ubuntu-24.04
-            artifact_name: quantus-cli-linux
+            artifact_name: quantus-cli-rm-linux
           - target: x86_64-apple-darwin
             os: macos-15
-            artifact_name: quantus-cli-macos
+            artifact_name: quantus-cli-rm-macos
           - target: x86_64-pc-windows-msvc
             os: windows-2025
-            artifact_name: quantus-cli-windows
+            artifact_name: quantus-cli-rm-windows
     steps:
       - name: Checkout code at tag
         uses: actions/checkout@v4
@@ -97,10 +97,10 @@ jobs:
         shell: bash
         run: |
           if [[ "${{ runner.os }}" == "Windows" ]]; then
-            asset_name="quantus-cli-${NEW_VERSION}-${TARGET_ARCH}.exe"
+            asset_name="quantus-cli-rm-${NEW_VERSION}-${TARGET_ARCH}.exe"
             cp "target/${TARGET_ARCH}/release/quantus.exe" "${asset_name}"
           else
-            asset_name="quantus-cli-${NEW_VERSION}-${TARGET_ARCH}"
+            asset_name="quantus-cli-rm-${NEW_VERSION}-${TARGET_ARCH}"
             cp "target/${TARGET_ARCH}/release/quantus" "${asset_name}"
           fi
           echo "Created asset: ${asset_name}"
@@ -109,7 +109,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: release-assets-${{ matrix.target }}
-          path: quantus-cli-${{ needs.create-tag.outputs.version }}-${{ matrix.target }}*
+          path: quantus-cli-rm-${{ needs.create-tag.outputs.version }}-${{ matrix.target }}*
 
   create-github-release:
     name: 🚀 Create GitHub Release
