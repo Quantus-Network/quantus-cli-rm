@@ -24,7 +24,7 @@ A modern command line interface for interacting with the Quantus Network, featur
 ```bash
 # Clone and build
 git clone <repository-url>
-cd quantus-cli
+cd quantus-cli-rm
 cargo build --release
 
 # The binary will be available as `quantus`
